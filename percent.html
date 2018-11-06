@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, width=device-width">
+<title>css常用尺寸单位总结</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+	* {
+		padding: 0;
+		line-height: 1.2;
+	}
+	html {
+		height: 100%;
+	}
+	body {
+		width: 80%;
+		height: 100%;
+		margin: 0 auto;
+		/* 设置根字体大小为10px */ 
+		font-size: 62.5%; /* 10/16 = 0.625 */ 
+	}
+	.a-href{
+		width: 100%;
+		border: 1px solid red;
+		font-size: 160%;
+	}
+	.a-href a{
+		display: inline-block;
+		padding: 2%;
+	}
+	.em {
+		height: 50%; 
+		overflow-y: scroll;
+		font-size: 160%; 
+		border: 1px solid blue;
+	}
+	.em p{
+		font-size: 100%;
+		height: 20%;
+		border: 1px solid red;
+	}
+	.red{
+		color: red;
+	}
+</style>
+</head>
+<body>
+	<h1>css常用尺寸单位总结（默认浏览器字体大小为16px）<br /> 
+		<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length">官方文档</a></h1>
+	<p class="a-href"><a href="index.html">em</a><a href="rem.html">rem</a><a href="percent.html">percent</a><a href="px.html">px</a><a href="vw.html">vw</a><a href="vh.html">vh</a></p>
+    <div class="em">
+    	<h3>%</h3>
+    	<p>百分比相对单位，相对于父元素内容宽高，适合用于可伸缩布局的尺寸计算</p>
+    	<p>子元素根据父元素的内容宽，进行水平方向和垂直方向的计算，例如padding和margin还有width</p>
+    	<p class="red">* 要给元素设置height的值设置百分比，要记得所有父级也都要设置height，html和body都要设置100%</p>
+    	<p class="red">* 一般比较少给div容器设置固定的高</p>
+    	<p>目前主流的浏览器都支持</p>
+    </div>
+</body>
+</html>

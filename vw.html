@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, width=device-width">
+<title>css常用尺寸单位总结</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style type="text/css">
+	* {
+		padding: 0;
+		line-height: 1.2;
+	}
+	body {
+		width: 80%;
+		margin: 0 auto; 
+	}
+	.a-href{
+		width: 81vw;
+		border: 1px solid red;
+		font-size: 2vw;
+	}
+	.a-href a{
+		display: inline-block;
+		padding: 5vw;
+	}
+	.vw {
+		font-size: 2vw; 
+	}
+	.vw p{
+		font-size: 1.5vw;
+	}
+</style>
+</head>
+<body>
+	<h1>css常用尺寸单位总结（默认浏览器字体大小为16px）<br /> 
+		<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length">官方文档</a></h1>
+	<p class="a-href"><a href="index.html">em</a><a href="rem.html">rem</a><a href="percent.html">percent</a><a href="px.html">px</a><a href="vw.html">vw</a><a href="vh.html">vh</a></p>
+    <div class="vw">
+    	<h3>vw 相对于视窗的宽度</h3>
+    	<p>相对于视窗的宽度，1vw等于1/100的窗口宽度</p>
+    	<p>可用于可伸缩的布局</p>
+    	<p>目前主流的浏览器都支持，Ie9，Edge12</p>
+    </div>
+</body>
+</html>

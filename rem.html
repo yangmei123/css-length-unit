@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, width=device-width">
+<title>css常用尺寸单位总结</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script type="text/javascript">
+	// 虽然js放在此处很影响性能
+	// 但是为了先计算出根元素的字符大小只好在浏览器初次渲染前先计算
+	// 立即执行计算
+	// 添加监听设备方向是否修改(在手机媒体设备)和设备视图调整事件(只在window事件里)
+	(function(b, c) {
+	  var d = b.documentElement,
+	    resizeEvent = 'orientationchange' in c ? 'orientationchange' : 'resize',
+	    resetFontsize = function() { // 重置html根节点字符大小
+	      var a = d.clientWidth
+	      if (!a) return;
+	      var w = a / 100;
+	      d.style.fontSize = w + 'px';
+	    };
+	  if (!b.addEventListener) return; //ie9以上，否则要用attachEvent
+	  // 页面视图调整事件
+	  c.addEventListener(Event, resetFontsize, false);
+	  // 文档被加载和解析，dom节点完成，媒体链接资源等有可能还未加载完成
+	  b.addEventListener('DOMContentLoaded', resetFontsize, false)
+	})(document, window);
+</script>
+<style type="text/css">
+	* {
+		padding: 0;
+		line-height: 1.2;
+	}
+	html {
+		/* 设置根字体大小为10px */ 
+		font-size: 62.5%; /* 10/16 = 0.625 */ 
+	}
+	body {
+		width: 80%;
+		margin: 0 auto;
+	}
+	.a-href{
+		width: 35rem;
+		margin: 0 auto;
+		border: 1px solid blue;
+		font-size: 1.6rem;
+	}
+	.a-href a{
+		display: inline-block;
+		padding: 0.5rem;
+	}
+	.rem {
+		font-size: 1.6rem; 
+	}
+	.rem p{
+		font-size: 2rem;
+	}
+</style>
+</head>
+<body>
+	<h1>css常用尺寸单位总结（默认浏览器字体大小为16px）<br /> 
+		<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length">官方文档</a></h1>
+	<p class="a-href"><a href="index.html">em</a><a href="rem.html">rem</a><a href="percent.html">percent</a><a href="px.html">px</a><a href="vw.html">vw</a><a href="vh.html">vh</a></p>
+    <div class="rem">
+    	<h3>rem</h3>
+    	<p>根据根元素的font-size大小计算</p>
+    	<p>子元素根据元素都根据根元素定义的font-size来计算，2rem就是根元素font-size的两倍</p>
+    	<p>目前主流的浏览器都支持，Ie9，Edge12</p>
+    </div>
+    
+</body>
+</html>
