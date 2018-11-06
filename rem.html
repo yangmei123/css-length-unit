@@ -21,12 +21,21 @@
 	      if (!a) return;
 	      var w = a / 100;
 	      d.style.fontSize = w + 'px';
+	    },
+	    callback = function() {
+	      if (c.requestAnimationFrame) {
+		  	// c.requestAnimationFrame(resetFontsize);
+		  	resetFontsize();
+		  } else {
+		  	setTimeout(resetFontsize, 66);
+		  }
 	    };
 	  if (!b.addEventListener) return; //ie9以上，否则要用attachEvent
+
 	  // 页面视图调整事件
-	  c.addEventListener(Event, resetFontsize, false);
+	  c.addEventListener(resizeEvent, callback, false); // 或window.onresize
 	  // 文档被加载和解析，dom节点完成，媒体链接资源等有可能还未加载完成
-	  b.addEventListener('DOMContentLoaded', resetFontsize, false)
+	  b.addEventListener('DOMContentLoaded', callback, false)
 	})(document, window);
 </script>
 <style type="text/css">
